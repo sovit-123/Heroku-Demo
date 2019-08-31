@@ -13,20 +13,30 @@
 
 <body>
  <div class="login">
-	<h1>Predict Salary Analysis</h1>
+	<h1 style="font-weight: bold; font-family: Monospace;">Predict Salary Analysis</h1>
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="experience" placeholder="Experience" required="required" />
-        <input type="text" name="test_score" placeholder="Test Score" required="required" />
-		<input type="text" name="interview_score" placeholder="Interview Score" required="required" />
+      <input type="text" name="experience" placeholder="Experience" required="required" 
+        style="border-radius: 5px; height: 30px;"/>
+      <input type="text" name="test_score" placeholder="Test Score" required="required" 
+        style="border-radius: 5px; height: 30px;"/>
+      <input type="text" name="interview_score" placeholder="Interview Score" required="required" 
+        style="border-radius: 5px; height: 30px;"/>
 
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+      <button 
+        style="color: black; background-color: green;
+               border-radius: 5px; height: 30px; width: 80px;
+               font-weight: bold;" 
+        type="submit" 
+        class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
 
    <br>
    <br>
-   {{ prediction_text }}
+   <p style="color: green; font-weight: bold; font-family: Monospace; font-size: 20px;">
+     {{ prediction_text }}
+  </p>
 
  </div>
 
